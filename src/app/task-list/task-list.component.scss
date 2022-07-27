@@ -32,13 +32,19 @@
   display: flex;
   align-items: center;
   font-weight: bold;
+  transition: background-color 100ms;
+  cursor: pointer;
 
   &.done {
-    background: transparent;
+    background-color: rgba(0, 0, 0, 0);
   }
 
   & + & {
     margin-top: 0.25rem;
+  }
+
+  &:hover:not(.done), &:hover:not(.done) .item-marker {
+    background: rgba(0, 0, 0, 0.7);
   }
 
   &.grow {
@@ -66,6 +72,7 @@
   height: 100%;
   background-color: black;
   border-radius: 100%;
+  transition: background-color 100ms, opacity 100ms;
 
   .done & {
     opacity: 0;
@@ -74,6 +81,8 @@
 
 .item-label {
   position: relative;
+  transition: color 100ms, opacity 100ms;
+  user-select: none;
 
   &::after {
     display: block;
