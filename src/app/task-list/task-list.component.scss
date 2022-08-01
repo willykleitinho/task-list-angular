@@ -9,7 +9,7 @@
   list-style: none;
   display: grid;
   padding: 0.25rem;
-  background: linear-gradient(213.19deg, #001AFF 0%, #FFBF1A 48.57%, #E100F5 100%);
+  background: var(--bg-gradient);
   border-radius: 2rem;
   height: 50vh;
   flex-grow: 1;
@@ -76,7 +76,7 @@
 
   .done & {
     background: transparent;
-    
+
     img {
       filter: invert(1);
     }
