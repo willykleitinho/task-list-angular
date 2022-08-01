@@ -75,7 +75,11 @@
   transition: background-color 100ms, opacity 100ms;
 
   .done & {
-    opacity: 0;
+    background: transparent;
+    
+    img {
+      filter: invert(1);
+    }
   }
 }
 
