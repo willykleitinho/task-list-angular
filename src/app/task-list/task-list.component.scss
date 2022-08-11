@@ -5,6 +5,15 @@
   margin: 2rem 0;
 }
 
+.howto-message {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-bottom: 0.25rem;
+}
+
 .list-container {
   list-style: none;
   display: grid;
@@ -115,6 +124,15 @@
     &::after {
       content: '';
     }
-
   }
+}
+
+.empty-list-message {
+  background: black;
+  padding: 2rem;
+  font-size: 1.5rem;
+  letter-spacing: 0.75rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
 }

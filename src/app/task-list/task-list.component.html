@@ -1,5 +1,11 @@
+<!-- <p class="howto-message">Clique duplo para marcar como feita / a fazer</p> -->
+<p class="howto-message">Clique duplo para alterar</p>
+
 <div class="list-container">
   <div class="list-items">
+    <div *ngIf="!tasks.length" class="empty-list-message">
+      Sem tarefas
+    </div>
     <div
       *ngFor="let task of tasks"
       [class]="task.done ? 'list-item done' : 'list-item'"

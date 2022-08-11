@@ -10,7 +10,7 @@ import { TasksService } from '../services/tasks.service';
 })
 export class ActionBarComponent implements OnInit {
 
-  showModal = true;
+  showModal = false;
 
   newTaskControl = new FormGroup({
     title: new FormControl(''),
