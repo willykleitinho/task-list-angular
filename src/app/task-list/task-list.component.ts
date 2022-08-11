@@ -18,11 +18,7 @@ export class TaskListComponent implements OnInit {
   }
 
   toggleDone(id: Task['id']) {
-    this.tasks.forEach((task) => {
-      if (task.id === id) {
-        task.done = !task.done;
-      }
-    })
+    this.tasksService.toggleDone(id);
   }
 
 }
