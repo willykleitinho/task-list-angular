@@ -1,0 +1,43 @@
+:host {
+  position: fixed;
+  inset: 0 0 0 0;
+  pointer-events: none;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: grid;
+  place-items: center;
+  pointer-events: initial;
+
+  &.hide {
+    display: none;
+  }
+}
+
+.card-outer-container {
+  padding: 0.25rem;
+  border-radius: 2rem;
+  background: var(--bg-gradient);
+  width: 100%;
+}
+
+.card-inner-container {
+  padding: 1rem;
+  border-radius: 2rem;
+  background: black;
+}
+
+.sm {
+  max-width: 20rem;
+}
+
+.md {
+  max-width: 25rem;
+}
+
+.lg {
+  max-width: 30rem;
+}

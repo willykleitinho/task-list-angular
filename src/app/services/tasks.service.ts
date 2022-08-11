@@ -12,12 +12,23 @@ export type Task = {
   providedIn: 'root'
 })
 export class TasksService implements OnInit {
+  private tasks: Task[] = [];
+  lastId = this.tasks.length + 1;
 
   constructor() { }
 
   ngOnInit() {}
 
   getTasks(): Observable<Task[]> {
-    return of(mockTasks);
+    return of(this.tasks);
   }
+
+  addTask(title: string) {
+    this.tasks.push({
+      task: title,
+      done: false,
+      id: this.lastId++,
+    });
+  }
+
 }

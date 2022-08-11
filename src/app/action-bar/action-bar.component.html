@@ -2,8 +2,22 @@
   <div></div>
   <div></div>
   <div>
-    <button class="add-button">
+    <button class="add-button" (click)="this.toggleModal()">
       +
     </button>
   </div>
 </div>
+<app-modal [show]="this.showModal" (onToggle)="this.toggleModal()">
+  <div class="modal-title">
+    Adicionar task
+  </div>
+  <form [formGroup]="newTaskControl" (ngSubmit)="newTaskSubmit()">
+    <label>
+      Título: {{newTaskControl.value.title}}
+      <input type="text" formControlName="title" />
+    </label>
+    <button type="submit">
+      Adicionar
+    </button>
+  </form>
+</app-modal>

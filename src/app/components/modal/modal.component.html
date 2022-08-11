@@ -1,0 +1,11 @@
+<div
+  class="overlay"
+  [ngClass]="[this.show ? '' : 'hide']"
+  (click)="this.onToggle.emit()"
+>
+  <div class="card-outer-container" [ngClass]="size" (click)="$event.stopPropagation()">
+    <div class="card-inner-container">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>
