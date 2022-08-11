@@ -8,16 +8,17 @@
   </div>
 </div>
 <app-modal [show]="this.showModal" (onToggle)="this.toggleModal()">
-  <div class="modal-title">
-    Adicionar task
-  </div>
-  <form [formGroup]="newTaskControl" (ngSubmit)="newTaskSubmit()">
+  <form class="new-task-form" [formGroup]="newTaskControl" (ngSubmit)="newTaskSubmit()">
     <label>
-      Título: {{newTaskControl.value.title}}
-      <input type="text" formControlName="title" />
+      <span>Nova tarefa</span>
+      <div class="input-container">
+        <input type="text" formControlName="title" placeholder="Fazer..."/>
+      </div>
     </label>
-    <button type="submit">
-      Adicionar
-    </button>
+    <div class="button-container">
+      <button type="submit">
+        Adicionar
+      </button>
+    </div>
   </form>
 </app-modal>

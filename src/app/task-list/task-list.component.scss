@@ -52,6 +52,7 @@
 
   &.grow {
     flex-grow: 1;
+    pointer-events: none;
   }
 }
 
@@ -63,6 +64,7 @@
   background-color: white;
   margin-right: 0.75rem;
   border-radius: 100%;
+  flex-shrink: 0;
 
   .done & {
     background: black;
@@ -90,6 +92,9 @@
   position: relative;
   transition: color 100ms, opacity 100ms;
   user-select: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   &::after {
     display: block;

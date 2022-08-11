@@ -11,6 +11,7 @@
   display: grid;
   place-items: center;
   pointer-events: initial;
+  padding: 2rem 1rem;
 
   &.hide {
     display: none;
@@ -25,7 +26,7 @@
 }
 
 .card-inner-container {
-  padding: 1rem;
+  padding: 1.5rem;
   border-radius: 2rem;
   background: black;
 }

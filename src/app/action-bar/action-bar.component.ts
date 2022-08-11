@@ -36,6 +36,7 @@ export class ActionBarComponent implements OnInit {
 
 
     this.tasksService.addTask(title);
-
+    this.newTaskControl.reset();
+    this.toggleModal();
   }
 }
