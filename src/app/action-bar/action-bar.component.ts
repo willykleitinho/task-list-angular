@@ -11,6 +11,7 @@ import { TasksService } from '../services/tasks.service';
 export class ActionBarComponent implements OnInit {
 
   showModal = false;
+  showDeleteModal = false;
 
   newTaskControl = new FormGroup({
     title: new FormControl(''),
@@ -27,6 +28,10 @@ export class ActionBarComponent implements OnInit {
     this.showModal = !this.showModal;
   }
 
+  toggleDeleteModal() {
+    this.showDeleteModal = !this.showDeleteModal;
+  }
+
   newTaskSubmit() {
     const {
       title,
@@ -41,10 +46,7 @@ export class ActionBarComponent implements OnInit {
   }
 
   deleteAllTasks() {
-    const confirmed = confirm('Deletar todas as tarefas?');
-
-    if (!confirmed) return;
-
     this.tasksService.deleteAllTasks();
+    this.showDeleteModal = !this.showDeleteModal;
   }
 }

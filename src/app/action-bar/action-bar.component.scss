@@ -39,6 +39,66 @@
     transform: scale(1);
   }
 }
+
+.delete-buttons-container {
+  display: flex;
+
+  & > * + * {
+    margin-left: 1rem;
+  }
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.delete-message {
+  font-size: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.modal-button {
+  display: inline-block;
+  border: 0.25rem solid #eee;
+  border-radius: 100px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  background: black;
+  color: #eee;
+  transition: transform 50ms;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  font-weight: bold;
+
+  &:hover {
+    // background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+  }
+  
+  &:active {
+    transform: scale(0.9);
+  }
+
+  &.danger {
+    color: var(--clr-danger);
+    border-color: var(--clr-danger);
+  }
+}
+
+.modal-button.icon {
+  line-height: 1;
+
+  & > * {
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+  }
+}
+
 .new-task-form {
   span {
     margin-bottom: 1rem;
@@ -73,30 +133,7 @@
     justify-content: flex-end;
   }
 
-  button {
-    display: inline-block;
-    border: 0.25rem solid white;
-    border-radius: 100px;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    background: black;
-    color: white;
-    transition: transform 50ms;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.85rem;
-    font-weight: bold;
-
-    &:hover {
-      // background: rgba(255, 255, 255, 0.2);
-      transform: scale(1.1);
-    }
-    
-    &:active {
-      transform: scale(0.9);
-    }
-
-  }
+  
 
   button, input {
     font-family: inherit;
