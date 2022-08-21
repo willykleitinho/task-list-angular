@@ -1,13 +1,22 @@
 <div class="container">
-  <div></div>
+  <div>
+    <button class='action-button' (click)="deleteAllTasks()">
+      <mat-icon>
+        delete_outline
+      </mat-icon>
+    </button>
+  </div>
   <div></div>
   <div>
-    <button class="add-button" (click)="this.toggleModal()">
-      +
+    <button class='action-button' (click)="toggleModal()">
+      <mat-icon>
+        add_task
+      </mat-icon>
     </button>
   </div>
 </div>
-<app-modal [show]="this.showModal" (onToggle)="this.toggleModal()">
+
+<app-modal [show]="showModal" (onToggle)="toggleModal()">
   <form class="new-task-form" [formGroup]="newTaskControl" (ngSubmit)="newTaskSubmit()">
     <label>
       <span>Nova tarefa</span>

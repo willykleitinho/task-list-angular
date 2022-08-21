@@ -6,13 +6,16 @@
 }
 
 .container { 
+  max-width: 30rem;
+  margin: auto;
+  
   display: flex;
   & > * {
     flex-basis: 100%;
   }
 }
 
-.add-button {
+.action-button {
   width: 3rem;
   height: 3rem;
   font-size: 3rem;
@@ -22,6 +25,10 @@
   background: black;
   border-radius: 100%;
   transition: background-color 100ms, transform 100ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
 
   &:hover {
     background: rgba(155, 155, 155, 0.5);

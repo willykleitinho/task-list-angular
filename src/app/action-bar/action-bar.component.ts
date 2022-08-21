@@ -39,4 +39,12 @@ export class ActionBarComponent implements OnInit {
     this.newTaskControl.reset();
     this.toggleModal();
   }
+
+  deleteAllTasks() {
+    const confirmed = confirm('Deletar todas as tarefas?');
+
+    if (!confirmed) return;
+
+    this.tasksService.deleteAllTasks();
+  }
 }

@@ -21,4 +21,9 @@ export class TaskListComponent implements OnInit {
     this.tasksService.toggleDone(id);
   }
 
+  deleteTask(id: Task['id']) {
+    console.log('delete task', id);
+    this.tasksService.deleteTask(id);
+  }
+
 }

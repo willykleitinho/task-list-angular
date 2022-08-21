@@ -13,7 +13,7 @@ export type Task = {
 })
 export class TasksService implements OnInit {
   private tasks: Task[] = [];
-  lastId = this.tasks.length + 1;
+  lastId = 1;
 
   constructor() {
     const userTasks = localStorage.getItem('user-tasks');
@@ -23,13 +23,13 @@ export class TasksService implements OnInit {
     if (!userTasks) return;
 
     try {
-      let tasks = JSON.parse(userTasks);
+      let tasks: Task[] = JSON.parse(userTasks);
       
       if (!Array.isArray(tasks) || tasks.length < 1) throw new Error();
       
       tasks = tasks.sort((a: Task, b: Task) => a.id - b.id);
 
-      this.lastId = tasks[tasks.length -1] + 1;
+      this.lastId = tasks[tasks.length -1].id + 1;
       this.tasks = Array.from(tasks);
     } catch {}
    }
@@ -66,4 +66,13 @@ export class TasksService implements OnInit {
     localStorage.setItem('user-tasks', JSON.stringify(this.tasks));
   }
 
+  deleteTask(id: Task['id']) {
+    this.tasks.splice(this.tasks.findIndex(task => task.id === id));
+    this.saveTasks();
+  }
+
+  deleteAllTasks() {
+    this.tasks.splice(0, this.tasks.length);
+    this.saveTasks();
+  }
 }

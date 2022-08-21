@@ -16,8 +16,15 @@
           <img *ngIf="task.done" src="/assets/check-solid.svg">
         </div>
       </div>
-      <div class="item-label">
-        {{ task.task }}
+      <div class="item-label-container">
+        <div class="item-label">
+          {{ task.task }}
+        </div>
+      </div>
+      <div class="close-container">
+        <button (click)="deleteTask(task.id)">
+          x
+        </button>
       </div>
     </div>
     <div class="list-item grow"></div>
