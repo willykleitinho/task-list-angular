@@ -67,7 +67,7 @@ export class TasksService implements OnInit {
   }
 
   deleteTask(id: Task['id']) {
-    this.tasks.splice(this.tasks.findIndex(task => task.id === id), 0);
+    this.tasks.splice(this.tasks.findIndex(task => task.id === id), 1);
     this.saveTasks();
   }
 
