@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import {
+  style,
+  trigger,
+  state,
+  animate,
+  transition,
+} from '@angular/animations';
 
 import { FormControl, FormGroup } from '@angular/forms';
 import { TasksService } from '../services/tasks.service';
@@ -6,7 +13,16 @@ import { TasksService } from '../services/tasks.service';
 @Component({
   selector: 'app-action-bar',
   templateUrl: './action-bar.component.html',
-  styleUrls: ['./action-bar.component.scss']
+  styleUrls: ['./action-bar.component.scss'],
+  animations: [
+    trigger('onMount', [
+      state('show', style({ opacity: 1, transform: 'translateY(0)' })),
+      state('void', style({ opacity: 0, transform: 'translateY(50px)' })),
+      transition('void => show', [
+        animate('100ms 100ms ease-in-out')
+      ])
+    ])
+  ]
 })
 export class ActionBarComponent implements OnInit {
 

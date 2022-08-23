@@ -7,6 +7,9 @@ import {
   style,
   transition,
   animate,
+  animateChild,
+  query,
+  group,
 } from '@angular/animations';
 
 @Component({
@@ -33,6 +36,20 @@ import {
         animate('150ms ease-in-out'),
       ]),
     ]),
+    trigger('onMount', [
+      state('void', style({ opacity: 0, transform: 'translateY(-20px)' })),
+      state('show', style({ opacity: 1, transform: 'translateY(0)' })),
+      transition('void => show', [
+        animate('100ms 100ms ease-in-out'),
+      ])
+    ]),
+    trigger('onMountList', [
+      state('void', style({ opacity: 0 })),
+      state('show', style({ opacity: 1 })),
+      transition('void => show', [
+        animate('200ms ease-in-out'),
+      ]),
+    ])
   ]
 })
 export class TaskListComponent implements OnInit {

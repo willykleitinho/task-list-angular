@@ -37,7 +37,6 @@ $task-list-theme: mat.define-light-theme((
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-size: 16px;
 }
 
 :root {
@@ -52,5 +51,10 @@ body {
   color: white;
   font-family: Arial, Helvetica, sans-serif;
 }
-html, body { height: 100%; }
+html, body {
+  height: 100%;
+  overflow: hidden;
+  font-size: 16px;
+}
+
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

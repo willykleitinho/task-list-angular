@@ -1,7 +1,7 @@
 <!-- <p class="howto-message">Clique duplo para marcar como feita / a fazer</p> -->
-<p class="howto-message">Clique duplo para alterar</p>
+<p [@onMount]="'show'" class="howto-message">Clique duplo para alterar</p>
 
-<div class="list-container">
+<div class="list-container" [@onMountList]="'show'">
   <div class="list-items">
     <div *ngIf="!tasks.length" [@shrinkOutMessage]="'in'" class="empty-list-message">
       Sem tarefas
