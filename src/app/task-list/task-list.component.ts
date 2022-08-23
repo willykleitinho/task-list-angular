@@ -19,18 +19,19 @@ import {
       state('in', style({ height: '*', opacity: '1', padding: '*' })),
       state('void', style({ height: 0, opacity: '0', paddingTop: '0', paddingBottom: '0' })),
       transition('in <=> void', [
-        animate('150ms linear')
+        animate('150ms 100ms linear')
       ])
+      ,
     ]),
     trigger('shrinkOutMessage', [
-      state('in', style({ display: 'block' })),
-      state('void', style({ display: 'none' })),
+      state('in', style({ height: '*', padding: '*', color: '*' })),
+      state('void', style({ height: '0', paddingBottom: 0, paddingTop: 0, color: 'transparent' })),
       transition('void => in', [
         //animate('150ms 400ms ease-in-out'),
-        animate('0ms 150ms'),
+        animate('150ms 250ms ease-in-out'),
       ]),
       transition('in => void', [
-        animate(0),
+        animate('150ms ease-in-out'),
       ]),
     ]),
   ]
