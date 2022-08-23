@@ -32,7 +32,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .list-item {
@@ -180,4 +180,29 @@
       opacity: 1 !important;
     }
   }
+}
+
+
+$scrolball-color: rgb(255, 255, 255, 0.8);
+
+/* Firefox */
+.list-items {
+  scrollbar-width: auto;
+  scrollbar-color: $scrolball-color $scrolball-color;
+}
+
+/* Chrome, Edge, and Safari */
+.list-items::-webkit-scrollbar {
+  width: 6px;
+  background: transparent;
+}
+
+.list-items::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.list-items::-webkit-scrollbar-thumb {
+  background-color: $scrolball-color;
+  border-radius: 10px;
+  border: 2px solid transparent;
 }
