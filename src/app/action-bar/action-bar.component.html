@@ -16,7 +16,7 @@
   </div>
 </div>
 
-<app-modal [show]="showDeleteModal" (onToggle)="toggleDeleteModal()">
+<app-modal  [size]="'sm'" [show]="showDeleteModal" (onToggle)="toggleDeleteModal()">
   <p class="delete-message">Deseja mesmo apagar todas as tarefas?</p>
   <div class="delete-buttons-container">
     <button class="modal-button icon flex-grow" (click)="toggleDeleteModal()">
