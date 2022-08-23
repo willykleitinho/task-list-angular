@@ -7,7 +7,6 @@ import {
   style,
   transition,
   animate,
-  query,
 } from '@angular/animations';
 
 @Component({
