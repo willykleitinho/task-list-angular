@@ -1,18 +1,20 @@
-<div class="container" [@onMount]="'show'">
-  <div>
-    <button class='action-button' (click)="toggleDeleteModal()">
-      <mat-icon>
-        delete_outline
-      </mat-icon>
-    </button>
-  </div>
-  <div></div>
-  <div>
-    <button class='action-button' (click)="toggleModal()">
-      <mat-icon>
-        add_task
-      </mat-icon>
-    </button>
+<div class="outer-container">
+  <div class="container" [@onMount]="'show'">
+    <div>
+      <button class='action-button' (click)="toggleDeleteModal()">
+        <mat-icon>
+          delete_outline
+        </mat-icon>
+      </button>
+    </div>
+    <div></div>
+    <div>
+      <button class='action-button' (click)="toggleModal()">
+        <mat-icon>
+          add_task
+        </mat-icon>
+      </button>
+    </div>
   </div>
 </div>
 

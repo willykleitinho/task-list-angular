@@ -5,6 +5,10 @@
   letter-spacing: 0.75rem;
 }
 
+.outer-container {
+  overflow: hidden;
+}
+
 .container { 
   max-width: 30rem;
   margin: auto;
